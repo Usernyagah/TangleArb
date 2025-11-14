@@ -1,0 +1,7 @@
+/home/localhost/Desktop/TangleArb/tanglearb-bot/target/release/deps/fnv-be693e82aae73016.d: /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fnv-1.0.7/lib.rs
+
+/home/localhost/Desktop/TangleArb/tanglearb-bot/target/release/deps/libfnv-be693e82aae73016.rlib: /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fnv-1.0.7/lib.rs
+
+/home/localhost/Desktop/TangleArb/tanglearb-bot/target/release/deps/libfnv-be693e82aae73016.rmeta: /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fnv-1.0.7/lib.rs
+
+/home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fnv-1.0.7/lib.rs:

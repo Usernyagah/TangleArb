@@ -1,0 +1,5 @@
+/home/localhost/Desktop/TangleArb/tanglearb-bot/target/release/build/serde_core-0e534606f62f59af/build_script_build-0e534606f62f59af.d: /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_core-1.0.228/build.rs
+
+/home/localhost/Desktop/TangleArb/tanglearb-bot/target/release/build/serde_core-0e534606f62f59af/build_script_build-0e534606f62f59af: /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_core-1.0.228/build.rs
+
+/home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_core-1.0.228/build.rs:

@@ -1,0 +1,14 @@
+/home/localhost/Desktop/TangleArb/tanglearb-bot/target/debug/deps/serde-040e3ac4fd338b30.d: /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/localhost/Desktop/TangleArb/tanglearb-bot/target/debug/build/serde-08f812c234a498cb/out/private.rs
+
+/home/localhost/Desktop/TangleArb/tanglearb-bot/target/debug/deps/libserde-040e3ac4fd338b30.rlib: /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/localhost/Desktop/TangleArb/tanglearb-bot/target/debug/build/serde-08f812c234a498cb/out/private.rs
+
+/home/localhost/Desktop/TangleArb/tanglearb-bot/target/debug/deps/libserde-040e3ac4fd338b30.rmeta: /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/localhost/Desktop/TangleArb/tanglearb-bot/target/debug/build/serde-08f812c234a498cb/out/private.rs
+
+/home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/home/localhost/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/home/localhost/Desktop/TangleArb/tanglearb-bot/target/debug/build/serde-08f812c234a498cb/out/private.rs:
+
+# env-dep:OUT_DIR=/home/localhost/Desktop/TangleArb/tanglearb-bot/target/debug/build/serde-08f812c234a498cb/out
