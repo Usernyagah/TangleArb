@@ -1,0 +1,17 @@
+[package]
+name = "tanglearb"
+version = "1.0.0"
+edition = "2024"
+
+[addresses]
+tanglearb = "_"
+std = "0x1"
+iota = "0x1"
+
+[dependencies]
+MoveStdlib = { git = "https://github.com/iotaledger/move.git", subdir = "language/move-stdlib", rev = "main" }
+Iota = { git = "https://github.com/iotaledger/move.git", subdir = "language/move-stdlib", rev = "main" }
+
+[dev-addresses]
+tanglearb = "0xCAFE"
+
