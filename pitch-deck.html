@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TangleArb - Pitch Deck</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css">
+    <style>
+        .reveal .slides section {
+            text-align: left;
+        }
+        .reveal h1, .reveal h2, .reveal h3 {
+            text-align: center;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .feature-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #fff;
+            padding: 10px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .checkmark {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .cross {
+            color: #f44336;
+            font-weight: bold;
+        }
+        .architecture {
+            font-family: monospace;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 1: Title -->
+            <section>
+                <h1>TangleArb</h1>
+                <h2>Automated Arbitrage Trading on IOTA MoveVM</h2>
+                <p style="text-align: center; margin-top: 50px;">
+                    <strong>Moveathon Europe Hackathon 2025</strong>
+                </p>
+                <p style="text-align: center; font-style: italic; margin-top: 30px;">
+                    Capitalizing on DeFi opportunities, automatically
+                </p>
+            </section>
+
+            <!-- Slide 2: The Problem -->
+            <section>
+                <h2>The Problem</h2>
+                <h3>Market Inefficiencies in DeFi</h3>
+                <ul>
+                    <li><strong>Price Discrepancies:</strong> DEXes often have different prices for the same assets</li>
+                    <li><strong>Manual Trading:</strong> Current arbitrage requires constant monitoring and manual execution</li>
+                    <li><strong>Capital Requirements:</strong> Traditional arbitrage requires significant upfront capital</li>
+                    <li><strong>Missed Opportunities:</strong> Price differences disappear quickly - speed is critical</li>
+                    <li><strong>Complexity:</strong> Managing multiple DEXes, wallets, and strategies is complex</li>
+                </ul>
+                <p style="margin-top: 30px; text-align: center; font-size: 1.2em;">
+                    <strong>Result:</strong> Most arbitrage opportunities go unexploited by retail traders
+                </p>
+            </section>
+
+            <!-- Slide 3: The Solution -->
+            <section>
+                <h2>The Solution</h2>
+                <h3>TangleArb: Automated Arbitrage Platform</h3>
+                <p style="font-size: 1.2em; margin-bottom: 30px;">
+                    <strong>A complete, production-ready IOTA MoveVM package that:</strong>
+                </p>
+                <ul style="font-size: 1.1em;">
+                    <li>✅ <strong>Automates</strong> arbitrage opportunity detection and execution</li>
+                    <li>✅ <strong>Eliminates</strong> capital barriers with zero-fee flash loans</li>
+                    <li>✅ <strong>Secures</strong> funds in smart contract vaults</li>
+                    <li>✅ <strong>Enables</strong> custom strategy registration and management</li>
+                    <li>✅ <strong>Executes</strong> trades at blockchain speed</li>
+                </ul>
+                <p style="margin-top: 40px; text-align: center; font-style: italic;">
+                    Built for the IOTA ecosystem - leveraging MoveVM's security and efficiency
+                </p>
+            </section>
+
+            <!-- Slide 4: Product Overview -->
+            <section>
+                <h2>Product Overview</h2>
+                <h3>Complete Arbitrage Infrastructure</h3>
+                <div class="architecture">
+                    <pre>
+┌─────────────────────────────────────────┐
+│         TangleArb Platform              │
+├─────────────────────────────────────────┤
+│                                         │
+│  ┌──────────┐    ┌──────────┐          │
+│  │  Vault   │    │  Flash   │          │
+│  │ Manager  │◄───│  Loans   │          │
+│  └────┬─────┘    └──────────┘          │
+│       │                                 │
+│       ▼                                 │
+│  ┌──────────────────────────┐          │
+│  │  Arbitrage Executor       │          │
+│  │  (Multi-DEX Integration) │          │
+│  └──────────────────────────┘          │
+│       │                                 │
+│       ▼                                 │
+│  ┌──────────────────────────┐          │
+│  │  Strategy Registry        │          │
+│  │  (Custom Strategies)      │          │
+│  └──────────────────────────┘          │
+│                                         │
+└─────────────────────────────────────────┘
+                    </pre>
+                </div>
+            </section>
+
+            <!-- Slide 5: Key Features -->
+            <section>
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <h3>1. Secure Vault System</h3>
+                        <ul>
+                            <li>User-controlled capital management</li>
+                            <li>Automatic profit tracking</li>
+                            <li>Shareable vault objects</li>
+                            <li>Deposit/withdrawal history</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box">
+                        <h3>2. Zero-Fee Flash Loans</h3>
+                        <ul>
+                            <li>Same-bundle borrow/repay</li>
+                            <li>No upfront capital required</li>
+                            <li>Capital-efficient trading</li>
+                            <li>Integrated with vaults</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box">
+                        <h3>3. Automated Execution</h3>
+                        <ul>
+                            <li>Off-chain bot detection</li>
+                            <li>On-chain execution</li>
+                            <li>Real-time arbitrage cycles</li>
+                            <li>Automatic profit distribution</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box">
+                        <h3>4. Custom Strategy Registry</h3>
+                        <ul>
+                            <li>Personalized arbitrage paths</li>
+                            <li>Profit threshold settings</li>
+                            <li>Dynamic enable/disable</li>
+                            <li>Multi-strategy management</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Technology Stack -->
+            <section>
+                <h2>Technology Stack</h2>
+                <h3>Built on IOTA MoveVM</h3>
+                <div class="feature-grid">
+                    <div>
+                        <h4>Smart Contracts:</h4>
+                        <ul>
+                            <li>Move language for security</li>
+                            <li>IOTA Move Framework</li>
+                            <li>Friend functions for access control</li>
+                            <li>Comprehensive error handling</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Infrastructure:</h4>
+                        <ul>
+                            <li>Rust-based arbitrage bot</li>
+                            <li>Next.js frontend interface</li>
+                            <li>IOTA SDK integration</li>
+                            <li>Testnet & Mainnet ready</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 30px;">
+                    <h4>Security:</h4>
+                    <ul>
+                        <li>Ownership verification</li>
+                        <li>Input validation</li>
+                        <li>Friend function access control</li>
+                        <li>Smart contract audits ready</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 7: Market Opportunity -->
+            <section>
+                <h2>Market Opportunity</h2>
+                <h3>DeFi Arbitrage Market</h3>
+                <div class="feature-grid">
+                    <div>
+                        <h4>Market Size:</h4>
+                        <ul>
+                            <li>Global DeFi TVL: $100B+</li>
+                            <li>Daily arbitrage opportunities: Millions in potential profit</li>
+                            <li>IOTA ecosystem: Growing DeFi presence</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Target Users:</h4>
+                        <ul>
+                            <li>Retail traders seeking passive income</li>
+                            <li>Professional arbitrageurs</li>
+                            <li>DeFi protocols needing liquidity</li>
+                            <li>Institutional traders</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 30px;">
+                    <h4>Market Trends:</h4>
+                    <ul>
+                        <li>Increasing DEX fragmentation</li>
+                        <li>Growing need for automated solutions</li>
+                        <li>Flash loan adoption rising</li>
+                        <li>Cross-chain arbitrage expanding</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 8: Competitive Advantage -->
+            <section>
+                <h2>Competitive Advantage</h2>
+                <h3>Why TangleArb Wins</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>TangleArb</th>
+                            <th>Competitors</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Zero Fees</strong></td>
+                            <td class="checkmark">✅ Flash loans</td>
+                            <td class="cross">❌ High fees</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Automation</strong></td>
+                            <td class="checkmark">✅ Full bot integration</td>
+                            <td class="cross">⚠️ Manual/partial</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Security</strong></td>
+                            <td class="checkmark">✅ MoveVM smart contracts</td>
+                            <td class="cross">⚠️ Varies</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Custom Strategies</strong></td>
+                            <td class="checkmark">✅ Registry system</td>
+                            <td class="cross">❌ Limited</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IOTA Native</strong></td>
+                            <td class="checkmark">✅ Built for IOTA</td>
+                            <td class="cross">❌ Other chains</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Production Ready</strong></td>
+                            <td class="checkmark">✅ Complete package</td>
+                            <td class="cross">⚠️ Prototypes</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 20px; text-align: center;">
+                    <strong>Unique Value:</strong> First comprehensive arbitrage solution on IOTA MoveVM
+                </p>
+            </section>
+
+            <!-- Slide 9: Business Model -->
+            <section>
+                <h2>Business Model</h2>
+                <h3>Revenue Streams</h3>
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <h4>1. Platform Fees</h4>
+                        <ul>
+                            <li>Small percentage on profitable trades</li>
+                            <li>Transparent fee structure</li>
+                            <li>Competitive with market rates</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box">
+                        <h4>2. Premium Features</h4>
+                        <ul>
+                            <li>Advanced strategy analytics</li>
+                            <li>Priority execution</li>
+                            <li>Custom strategy templates</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box">
+                        <h4>3. Flash Loan Interest</h4>
+                        <ul>
+                            <li>Pool liquidity providers earn yield</li>
+                            <li>Sustainable ecosystem model</li>
+                            <li>(Future implementation)</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box">
+                        <h4>4. Enterprise Solutions</h4>
+                        <ul>
+                            <li>White-label arbitrage infrastructure</li>
+                            <li>Custom integrations for protocols</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 10: Roadmap -->
+            <section>
+                <h2>Roadmap</h2>
+                <h3>Development Timeline</h3>
+                <div style="margin-top: 30px;">
+                    <h4>✅ Phase 1: MVP (Completed)</h4>
+                    <ul>
+                        <li>Core smart contracts</li>
+                        <li>Vault system</li>
+                        <li>Flash loan mechanism</li>
+                        <li>Basic bot integration</li>
+                        <li>Frontend interface</li>
+                    </ul>
+                </div>
+                <div style="margin-top: 20px;">
+                    <h4>🔄 Phase 2: Integration (Current)</h4>
+                    <ul>
+                        <li>Real DEX integrations</li>
+                        <li>Enhanced bot capabilities</li>
+                        <li>Strategy analytics</li>
+                        <li>Performance optimization</li>
+                    </ul>
+                </div>
+                <div style="margin-top: 20px;">
+                    <h4>📅 Phase 3: Scale (Q2 2025)</h4>
+                    <ul>
+                        <li>Multi-chain support</li>
+                        <li>Advanced strategies</li>
+                        <li>Mobile app</li>
+                        <li>Community features</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 11: Demo -->
+            <section>
+                <h2>Demo</h2>
+                <h3>Live Demonstration</h3>
+                <div style="margin-top: 40px;">
+                    <h4>What We'll Show:</h4>
+                    <ol style="font-size: 1.1em;">
+                        <li>Frontend interface walkthrough</li>
+                        <li>Vault creation and deposit</li>
+                        <li>Strategy registration</li>
+                        <li>Bot execution simulation</li>
+                        <li>Profit tracking dashboard</li>
+                    </ol>
+                </div>
+                <div style="margin-top: 40px;">
+                    <h4>Key Metrics to Highlight:</h4>
+                    <ul>
+                        <li>Transaction speed</li>
+                        <li>Security features</li>
+                        <li>User experience</li>
+                        <li>Automation capabilities</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 12: Team & Ask -->
+            <section>
+                <h2>Team & Ask</h2>
+                <h3>Built for Moveathon Europe</h3>
+                <div style="margin-top: 30px;">
+                    <h4>Project Status:</h4>
+                    <ul>
+                        <li>✅ Production-ready smart contracts</li>
+                        <li>✅ Working bot infrastructure</li>
+                        <li>✅ Modern frontend interface</li>
+                        <li>✅ Comprehensive documentation</li>
+                    </ul>
+                </div>
+                <div style="margin-top: 30px;">
+                    <h4>What We're Looking For:</h4>
+                    <ul>
+                        <li>🎯 Feedback from judges and community</li>
+                        <li>🤝 Partnerships with IOTA DEXes</li>
+                        <li>💰 Potential funding for scaling</li>
+                        <li>🌐 Community adoption</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 13: Contact -->
+            <section>
+                <h2>Contact & Resources</h2>
+                <h3>Get Involved</h3>
+                <div style="margin-top: 40px;">
+                    <h4>Repository:</h4>
+                    <ul>
+                        <li>GitHub: https://github.com/Usernyagah/TangleArb</li>
+                        <li>Documentation: Complete README included</li>
+                        <li>Smart Contracts: MoveVM package ready</li>
+                    </ul>
+                </div>
+                <div style="margin-top: 30px;">
+                    <h4>Try It Now:</h4>
+                    <ul>
+                        <li>Testnet deployment available</li>
+                        <li>Quick start guide included</li>
+                        <li>Demo environment ready</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 14: Thank You -->
+            <section>
+                <h1>Questions?</h1>
+                <div style="text-align: center; margin-top: 80px;">
+                    <h2>TangleArb</h2>
+                    <p style="font-style: italic; font-size: 1.2em;">
+                        Automated Arbitrage Trading on IOTA MoveVM
+                    </p>
+                    <p style="margin-top: 50px; font-size: 1.1em;">
+                        Making DeFi arbitrage accessible to everyone
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide'
+        });
+    </script>
+</body>
+</html>
+
