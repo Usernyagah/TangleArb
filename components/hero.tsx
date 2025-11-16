@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import StatCard from './stat-card';
+import { Client, Wallet } from '@iota/sdk';
 
 interface HeroProps {
   isConnected: boolean;
@@ -29,11 +30,28 @@ export default function Hero({ isConnected, onConnect, address, balance }: HeroP
     return () => clearInterval(interval);
   }, []);
 
-  const handleConnect = () => {
-    // Mock wallet connection
-    const mockAddress = '0x' + Math.random().toString(16).slice(2, 10).toUpperCase();
-    const mockBalance = (Math.random() * 1000).toFixed(2);
-    onConnect(mockAddress, mockBalance);
+  const handleConnect = async () => {
+    try {
+      let mnemonic = window.prompt('Enter your 12- or 24-word IOTA mnemonic');
+      if (!mnemonic) {
+        alert('Mnemonic is required');
+        return;
+      }
+      // Connect to IOTA testnet
+      const client = new Client({ nodes: ['https://api.testnet.iota.org'] });
+      // Create wallet
+      const wallet = new Wallet({
+        client,
+        mnemonic,
+      });
+      const account = await wallet.getAccount('TangleArb');
+      const addresses = await account.addresses();
+      const balance = await account.getBalance();
+      onConnect(addresses[0].address, balance.baseCoin.total.toString());
+    } catch (error) {
+      alert('Failed to connect wallet: ' + error);
+      console.error('Failed to connect wallet:', error);
+    }
   };
 
   return (

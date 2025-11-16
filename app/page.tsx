@@ -33,7 +33,7 @@ export default function Home() {
 
         {isConnected && (
           <>
-            <VaultSection />
+            <VaultSection accountMnemonic={address ? undefined : undefined} accountAddress={address} />
             <StrategyCards />
             <ActivityFeed />
           </>
