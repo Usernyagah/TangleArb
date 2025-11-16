@@ -31,15 +31,48 @@ export default function Hero({ isConnected, onConnect, address, balance }: HeroP
 
   const handleConnect = async () => {
     try {
+      // 1. Wallet Standard (generic IOTA extension, window.iota)
+      if (typeof window !== 'undefined' && (window as any).iota && typeof (window as any).iota.request === 'function') {
+        try {
+          // This is a proposed Wallet Standard; check latest for extensions
+          const result = await (window as any).iota.request({ method: 'iota_connect' });
+          const address = result.addresses?.[0] || result.address || '';
+          const balance = result.balance || '0';
+          if (address) {
+            onConnect(address, balance.toString());
+            return;
+          }
+        } catch (e) {
+          alert('IOTA Wallet Standard extension detected, but connection failed: ' + e);
+          return;
+        }
+      }
+      // 2. Firefly extension (window.firefly)
+      if ((window as any).firefly && typeof (window as any).firefly.connect === 'function') {
+        try {
+          // Firefly web extension connect signature may differ, see actual docs for latest
+          const response = await (window as any).firefly.connect();
+          // Example: response = { addresses: ["..."], ... } or similar
+          const address = response.addresses?.[0] || response.address || '';
+          const balance = response.balance || '0';
+          if (address) {
+            onConnect(address, balance.toString());
+            return;
+          }
+        } catch (e) {
+          alert('Firefly extension detected but connection failed: ' + e);
+          return;
+        }
+      }
+      // 3. Fallback: Prompt for mnemonic as before
+      alert('IOTA wallet extension (Wallet Standard or Firefly) not detected! For best security and usability, install an IOTA wallet browser extension. Falling back to manual mnemonic input.');
       let mnemonic = window.prompt('Enter your 12- or 24-word IOTA mnemonic');
       if (!mnemonic) {
         alert('Mnemonic is required');
         return;
       }
-      // Dynamically import only in the browser (client-side):
       const { Client, Wallet } = await import('@iota/sdk');
       const client = new Client({ nodes: ['https://api.testnet.iota.org'] });
-      // Create wallet
       const wallet = new Wallet({ client, mnemonic });
       const account = await wallet.getAccount('TangleArb');
       const addresses = await account.addresses();
