@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import StatCard from './stat-card';
-import { Client, Wallet } from '@iota/sdk';
 
 interface HeroProps {
   isConnected: boolean;
@@ -37,13 +36,11 @@ export default function Hero({ isConnected, onConnect, address, balance }: HeroP
         alert('Mnemonic is required');
         return;
       }
-      // Connect to IOTA testnet
+      // Dynamically import only in the browser (client-side):
+      const { Client, Wallet } = await import('@iota/sdk');
       const client = new Client({ nodes: ['https://api.testnet.iota.org'] });
       // Create wallet
-      const wallet = new Wallet({
-        client,
-        mnemonic,
-      });
+      const wallet = new Wallet({ client, mnemonic });
       const account = await wallet.getAccount('TangleArb');
       const addresses = await account.addresses();
       const balance = await account.getBalance();

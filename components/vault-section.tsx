@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Client, Wallet } from '@iota/sdk';
 
 export default function VaultSection({ accountMnemonic, accountAddress }) {
   const [depositAmount, setDepositAmount] = useState('10');
@@ -22,6 +21,8 @@ export default function VaultSection({ accountMnemonic, accountAddress }) {
       setLoading(true);
       setError('');
       try {
+        // Dynamically import @iota/sdk only on client
+        const { Client, Wallet } = await import('@iota/sdk');
         const client = new Client({ nodes: ['https://api.testnet.iota.org'] });
         const wallet = new Wallet({ client, mnemonic: accountMnemonic });
         const account = await wallet.getAccount('TangleArb');
